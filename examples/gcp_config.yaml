@@ -1,0 +1,20 @@
+# examples/gcp_config.yaml
+resource:
+  gcp_storage_bucket:
+    myBucket:
+      iamConfiguration:
+        publicAccessPrevention: inherited
+      versioning: false
+  gcp_firewall:
+    myFirewall:
+      sourceRanges:
+        - "0.0.0.0/0"
+      allowed:
+        - IPProtocol: "tcp"
+          ports: ["22"]
+  gcp_iam_policy:
+    myIamPolicy:
+      bindings:
+        - role: roles/editor
+          members:
+            - allUsers

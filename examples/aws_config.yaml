@@ -1,0 +1,6 @@
+# examples/aws_config.yaml
+resource:
+  aws_s3_bucket:
+    my_bucket:
+      acl: public-read
+      versioning: false
